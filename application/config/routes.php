@@ -57,3 +57,6 @@ $route['login'] = 'User/index';
 $route['logout'] = 'User/logout';
 $route['authenticate'] = 'User/authenticate';
 $route['projects'] = 'project/index';
+$route['requestlpo'] = 'lpo/request_lpo_view';
+$route['requestlpo/items'] = 'lpo/request_lpo_items_view';
+$route['requestlpo/terms'] = 'lpo/request_lpo_terms_view';

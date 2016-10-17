@@ -51,7 +51,8 @@
                     <!-- /input-group -->
                 </li>
                 <?php foreach ($sidemenus as $key => $sidemenu) {
-                    echo '<li ><a href="'.str_ireplace('.x', '', $sidemenu['URL']).'">'.$sidemenu['Menu'].'</a></li>';
+                    $url = base_url().str_ireplace('.x', '', $sidemenu['URL']);
+                    echo '<li ><a href="'.$url.'">'.$sidemenu['Menu'].'</a></li>';
                 }?>
             </ul>
         </div>

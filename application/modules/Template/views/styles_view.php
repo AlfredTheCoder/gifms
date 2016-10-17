@@ -10,6 +10,10 @@
 <link href="<?php echo base_url().'public/sb-admin-2/vendor/datatables-responsive/dataTables.responsive.css';?>" rel="stylesheet">
 <!-- Custom Fonts -->
 <link href="<?php echo base_url().'public/sb-admin-2/vendor/font-awesome/css/font-awesome.min.css';?>" rel="stylesheet" type="text/css">
+<!--Select2-->
+<link href="<?php echo base_url().'public/lib/select2/css/select2.min.css';?>" rel="stylesheet">
+<!--Tagsinput-->
+<link href="<?php echo base_url().'public/lib/tagsinput/css/bootstrap-tagsinput.css';?>" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="<?php echo base_url().'public/sb-admin-2/dist/css/sb-admin-2.css';?>" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
