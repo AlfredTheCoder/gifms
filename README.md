@@ -1,3 +1,3 @@
 # GIFMS
 
-This is a grants integrated finacial management system
+This is a grants integrated financial management system
