@@ -20,6 +20,7 @@ class Lpo extends MX_Controller {
 		$data['lpo_statuses'] = $this->lpo_model->get_lpo_status();
 		$data['page_header'] = 'LPO';
 		$data['content_view'] = 'lpo/lpo_view';
+		$data['active_menu'] = 'lpo';
 		$data['page_title'] = 'GIFMS | LPO';
 		$this->template->load_view($data);
 	}
@@ -27,6 +28,7 @@ class Lpo extends MX_Controller {
 	public function request_lpo_view(){
 		$data['page_header'] = 'Request LPO';
 		$data['content_view'] = 'lpo/request_view';
+		$data['active_menu'] = 'lpo';
 		$data['page_title'] = 'GIFMS | LPO';
 		$this->template->load_view($data);
 	}
@@ -34,6 +36,7 @@ class Lpo extends MX_Controller {
 	public function request_lpo_items_view(){
 		$data['page_header'] = 'LPO>>Items';
 		$data['content_view'] = 'lpo/request_item_view';
+		$data['active_menu'] = 'lpo';
 		$data['page_title'] = 'GIFMS | LPO';
 		$this->template->load_view($data);
 	}
@@ -41,6 +44,7 @@ class Lpo extends MX_Controller {
 	public function request_lpo_terms_view(){
 		$data['page_header'] = 'LPO>>Terms';
 		$data['content_view'] = 'lpo/request_term_view';
+		$data['active_menu'] = 'lpo';
 		$data['page_title'] = 'GIFMS | LPO';
 		$this->template->load_view($data);
 	}
@@ -79,13 +83,13 @@ class Lpo extends MX_Controller {
 
 	public function get_programs(){
 		$search = strip_tags(trim($this->input->get('q')));
-		$sql = "SELECT ProjectID,ProjectName FROM Projects WHERE ProjectName LIKE ? AND Status = ?";
+		$sql = "SELECT ID,ProjectName FROM Projects WHERE ProjectName LIKE ? AND Status = ?";
 		$query = $this->db->query($sql, array('%'.$search.'%', 1));
 		$list = $query -> result_array();
 		if(count($list) > 0){
 		   	foreach ($list as $key => $value) {
 				$data[] = array(
-					'id' => $value['ProjectID'], 
+					'id' => $value['ID'], 
 					'text' => $value['ProjectName']
 				);			 	
 		   	} 
@@ -94,5 +98,24 @@ class Lpo extends MX_Controller {
 		   $data[] = array('id' => '0', 'text' => 'No Programs Found');
 		}
 		echo json_encode($data);
+	}
+	public function get_mailing_list(){
+		//Load config file
+		$this->load->config('lpo');
+
+		//Set mailing list
+		$mailing_list = array();
+		$mailing_list['to'] = $this->config->item('to');
+		$mailing_list['cc'] = $this->config->item('cc');
+		$mailing_list['cc'][] = $this->session->userdata('email');
+		$mailing_list['bcc'] = $this->config->item('bcc');
+
+		echo json_encode($mailing_list);
+	}
+
+	public function save(){
+		echo '<pre>';
+		print_r($this->input->post());
+		echo '</pre>';
 	}
 }

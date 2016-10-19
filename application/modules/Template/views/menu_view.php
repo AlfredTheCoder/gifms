@@ -13,10 +13,11 @@
     <ul class="nav nav-pills nav navbar-top-links navbar-right">
         <?php foreach ($menus as $key => $menu) {
             $active = '';
-            if($key == 0){
+            if(strtolower($menu['Menu']) == strtolower($active_menu)){
                 $active ='class="active"';
             }
-            echo '<li role="presentation" '.$active.'><a href="'.str_ireplace('.x', '', $menu['URL']).'">'.$menu['Menu'].'</a></li>';
+            $url = base_url().str_ireplace('.x', '', $menu['URL']);
+            echo '<li role="presentation" '.$active.'><a href="'.$url.'">'.$menu['Menu'].'</a></li>';
         }?>
         <!--Change password and logout-->
         <li class="dropdown">

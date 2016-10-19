@@ -8,6 +8,7 @@ $(function() {
 	  	$(tableID).empty('')
 	  	//Create new table
 	    $(tableID).DataTable({
+	    	"order": [[ 0, "desc" ]],
 	    	"destroy": true,
 	        "ajax": 'lpo/get_lpo_data/'+lpoStatus,
 	        columns: [
