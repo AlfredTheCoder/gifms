@@ -9,7 +9,7 @@
     <!-- /.row -->
     <div class="row">
         <div class="col-lg-12 col-md-12">
-            <form class="form-horizontal" method="post" action="<?php echo base_url().'lpo/save';?>" enctype="multipart/form-data">
+            <form class="form-horizontal" method="post" action="<?php echo base_url().'lpo/save_lpo';?>" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="supplier" class="col-sm-2 control-label">Supplier *</label>
                     <div class="col-sm-6">
@@ -83,29 +83,29 @@
                 <div class="form-group">
                     <label for="quotation" class="col-sm-2 control-label">Quotation *</label>
                     <div class="col-sm-6">
-                        <input type="file" class="form-control" id="quotation" name="quotation" required="required" accept="application/pdf">
+                        <input type="file" class="form-control" id="quotation" name="quotation[]" required="required">
                     </div>
                     <div class="col-sm-3">
-                        (Max Size 10 MB) * The selected quotation goes here
+                        <!--(Max Size 10 MB)--> * The selected quotation goes here
                     </div>
                 </div>
                 <div id="exempted_options">
                     <div class="form-group">
-                        <label for="option2" class="col-sm-2 control-label">Option 2</label>
+                        <label for="option2" class="col-sm-2 control-label">Option 2 *</label>
                         <div class="col-sm-6">
-                            <input type="file" class="form-control exempt" id="option2" name="option2" accept="application/pdf">
+                            <input type="file" class="form-control exempt" id="option2" name="quotation[]" required="required">
                         </div>
                         <div class="col-sm-3">
-                            (Max Size 10 MB)
+                            <!--(Max Size 10 MB)-->
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="option3" class="col-sm-2 control-label">Option 3</label>
+                        <label for="option3" class="col-sm-2 control-label">Option 3 *</label>
                         <div class="col-sm-6">
-                            <input type="file" class="form-control exempt" id="option3" name="option3" accept="application/pdf"> 
+                            <input type="file" class="form-control exempt" id="option3" name="quotation[]" required="required"> 
                         </div>
                         <div class="col-sm-3">
-                            (Max Size 10 MB)
+                            <!--(Max Size 10 MB)-->
                         </div>
                     </div>
                 </div>

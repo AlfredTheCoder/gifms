@@ -10,5 +10,7 @@
 <script src="<?php echo base_url().'public/lib/select2/js/select2.full.min.js';?>"></script>
 <!--Tagsinput-->
 <script src="<?php echo base_url().'public/lib/tagsinput/js/bootstrap-tagsinput.min.js';?>"></script>
+<!--Bootbox-->
+<script src="<?php echo base_url().'public/lib/bootbox/js/bootbox.min.js';?>"></script>
 <!-- Custom Theme JavaScript -->
 <script src="<?php echo base_url().'public/sb-admin-2/dist/js/sb-admin-2.js';?>"></script>

@@ -12,12 +12,16 @@ $(function() {
 	    	"destroy": true,
 	        "ajax": 'lpo/get_lpo_data/'+lpoStatus,
 	        columns: [
-	            {title: 'RequestDate'},
+	            {title: 'Request Date'},
 	            {title: 'Title'},
-	            {title: 'RequestedBy'},
+	            {title: 'Requested By'},
 	            {title: 'Supplier'},
 	            {title: 'Quotation'},
-	            {title: 'Amount'}
+	            {title: 'Line Items'},
+	            {title: 'Terms'},
+	            {title: 'Amount'},
+	            {title: 'Preview'},
+	            {title: 'Action'}
 	        ]
 	    });
 	});

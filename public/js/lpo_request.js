@@ -48,10 +48,12 @@ function exemptionHandler(e){
     $('#exempted_options').hide()
     $('#exempted_reason').show()
     $('.exempt').val('')
+    $('.exempt').removeAttr('required')
   }else{
     $('#exempted_options').show()
     $('#exempted_reason').hide()
     $('#reason_for_exemption').val('')
+    $('.exempt').prop('required', true)
   }
 }
 
