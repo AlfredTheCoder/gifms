@@ -13,7 +13,8 @@ $config['bcc'] = '';
 /*Default terms*/
 $config['terms'] = array(
 	'Payment: 14 day upon delivery of goods/ services and Invoice to our offices.', 
-	'Payment: Please quote the LPO reference number in your invoice for it to be successfully processed.'
+	'Payment: Please quote the LPO reference number in your invoice for it to be successfully processed.',
+	'Invoice Delivery: Invoices submitted after more than 3 months will not be honoured.'
 );
 
 /*Default upload options*/

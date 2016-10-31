@@ -73,7 +73,7 @@
             </div>
             <div class="col-sm-12">
                 <a href="<?php echo base_url().'lpo'; ?>" class="btn btn-primary">SAVE</a> <!--Could be approvals for directors-->
-                <a href="<?php echo base_url().'requestlpo/terms/'.$lpo_id.'/'.$quotation_id; ?>" class="btn btn-primary">SAVE &amp; ADD LPO TERMS</a>
+                <a href="<?php echo base_url().'requestlpo/terms/'.$lpo_id; ?>" class="btn btn-primary">SAVE &amp; ADD LPO TERMS</a>
             </div>
         </div> <!-- /.col -->
     </div> <!-- /.row -->

@@ -121,14 +121,14 @@ class Lpo extends MX_Controller {
 
 	public function get_programs(){
 		$search = strip_tags(trim($this->input->get('q')));
-		$sql = "SELECT ID,ProjectName,ProjectManager FROM Projects WHERE ProjectName LIKE ? AND Status = ?";
+		$sql = "SELECT ID,ProjectID,ProjectManager FROM Projects WHERE ProjectID LIKE ? AND Status = ?";
 		$query = $this->db->query($sql, array('%'.$search.'%', 1));
 		$list = $query -> result_array();
 		if(count($list) > 0){
 		   	foreach ($list as $key => $value) {
 				$data[] = array(
 					'id' => $value['ID'].'@'.$value['ProjectManager'], 
-					'text' => $value['ProjectName']
+					'text' => $value['ProjectID']
 				);			 	
 		   	} 
 		} 
@@ -137,6 +137,7 @@ class Lpo extends MX_Controller {
 		}
 		echo json_encode($data);
 	}
+	
 	public function get_mailing_list(){
 		//Set mailing list
 		$mailing_list = array();

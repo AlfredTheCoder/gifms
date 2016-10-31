@@ -19,6 +19,15 @@ class User extends MX_Controller {
 		$this->load->view('login_view');
 	}
 
+	public function change_password_view(){
+		$this->load->module('template');
+		$data['page_header'] = 'Change Password';
+		$data['content_view'] = 'user/change_password_view';
+		$data['active_menu'] = 'user';
+		$data['page_title'] = 'GIFMS | User';
+		$this->template->load_view($data);
+	}
+
 	public function authenticate(){
 		$authdata = $this->input->post();
 		#Hash password
