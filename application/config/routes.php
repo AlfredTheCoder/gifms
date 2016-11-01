@@ -67,3 +67,4 @@ $route['changePassword'] = 'user/change_password_view';
 $route['requestadvance'] = 'advance/request_advance_view';
 $route['allowances'] = 'allowance/index';
 $route['requestallowances'] = 'allowance/request_allowance_view';
+$route['requestallowances/payees/(:num)'] = 'allowance/request_allowance_payee_view/$1';

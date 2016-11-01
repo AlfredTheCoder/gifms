@@ -68,20 +68,26 @@
                     <label for="currency" class="col-sm-2 control-label">Payees *</label>
                     <div class="col-sm-10">
                         <label class="radio-inline">
-                            <input type="radio" name="currency" id="currency_kes" value="1" > Upload CSV File
+                            <input type="radio" name="payees_csv" value="1" > Upload CSV File
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="currency" id="currency_usd" value="2" checked="checked"> Input Payees
+                            <input type="radio" name="payees_csv" value="0" checked="checked"> Input Payees
                         </label>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="csv_payees_upload">
                     <label for="csv_file" class="col-sm-2 control-label">CSV Upload</label>
                     <div class="col-sm-6">
-                        <input type="file" class="form-control" id="csv_file" name="csv_file">
+                        <input type="file" class="form-control" id="mpesa_payees" name="mpesa_payees" accept=".csv">
+                        <ol>
+                            <li>Input the list of payees in the excel template. You may download a blank one <a href="<?php echo base_url().'mpesa_template.csv'; ?>">here</a>.</li>
+                            <li>The system will auto-calculate the MPESA charges so please do not input this.</li>
+                            <li>Save the excel file as a CSV file.</li>
+                            <li>Upload the file above.</li>
+                        </ol>
                     </div>
                     <div class="col-sm-3">
-                        <!--(Max Size 10 MB)-->
+
                     </div>
                 </div>
                 <div class="form-group">

@@ -54,4 +54,43 @@ class Allowance_model extends CI_Model {
         return $query->result_array();
 	}
 
+	public function get_allowance_payees($allowance_id){
+		$sql = "SELECT 
+					Name,
+					MobileNumber,
+					Amount,
+					MPESA,
+					FORMAT((Amount+MPESA), 'N0') AS Total
+				FROM AllowancePayees
+                WHERE AllowanceRequest = ?";
+		        $query = $this->db->query($sql, array($allowance_id));
+        return $query->result_array();
+	}
+
+	public function get_next_id($table, $column){
+		$this->db->select_max($column);
+		$query = $this->db->get($table);
+		return $query->row_array()[$column] + 1;
+	}
+
+	public function save($table, $savedata){
+		$this->db->insert($table, $savedata);
+	}
+
+
+	public function get_mpesa_charges($amount){
+		$sql = "SELECT 
+					Tarrif
+				FROM MPESATarrifs
+                WHERE $amount >= MinLimit 
+                AND $amount <= MaxLimit";
+		        $query = $this->db->query($sql);
+        $result = $query->row_array();
+        $tarrif = 0;
+        if(!empty($result)){
+        	$tarrif = $result['Tarrif'];
+        }
+        return $tarrif;
+	}
+
 }

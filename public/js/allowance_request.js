@@ -15,6 +15,10 @@ $(function() {
   $('#program_manager').select2({
         theme: 'classic'
   })
+  //Payees handler
+  $('input:radio[name="payees_csv"]').on('change', payeesHandler)
+  //Trigger handler
+  $('input:radio[name="payees_csv"]').trigger('change')
 });
 
 //Load select2 data 
@@ -50,4 +54,16 @@ function programHandler(){
         data: jQuery.parseJSON(data)
     });
   });
+}
+
+function payeesHandler(e){
+  if ($(this).is(':checked') && $(this).val() == 1) {
+    //upload csv
+    $('#csv_payees_upload').show()
+    $('#mpesa_payees').prop('required', true)
+  }else{
+    //manually input
+    $('#csv_payees_upload').hide()
+    $('#mpesa_payees').removeAttr('required')
+  }
 }
