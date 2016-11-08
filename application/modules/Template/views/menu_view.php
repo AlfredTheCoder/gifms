@@ -51,9 +51,17 @@
                     </div>
                     <!-- /input-group -->
                 </li>
-                <?php foreach ($sidemenus as $key => $sidemenu) {
-                    $url = base_url().str_ireplace('.x', '', $sidemenu['URL']);
-                    echo '<li ><a href="'.$url.'">'.$sidemenu['Menu'].'</a></li>';
+                <?php foreach ($sidemenus as $topname => $submenu) {
+                    if(!is_array($submenu)){
+                        echo '<li><a href="'.$submenu.'">'.$topname.'</a></li>';
+                    }else{
+                        echo '<li><a href="#">'.$topname.' <span class="fa arrow"></span></a>';
+                        echo '<ul class="nav nav-second-level">';
+                        foreach ($submenu as $innername => $innerlink) {
+                            echo '<li><a href="'.$innerlink.'">'.$innername.'</a></li>';
+                        }
+                        echo '</ul></li>';
+                    }
                 }?>
             </ul>
         </div>

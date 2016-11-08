@@ -15,8 +15,13 @@ class User extends MX_Controller {
 	}
 
 	public function index()
-	{
-		$this->load->view('login_view');
+	{	
+		if($this->session->userdata('EID')){
+			$home_page = str_ireplace('.x', '', $this->session->userdata('HomePage'));
+		    redirect($home_page);
+		}else{
+			$this->load->view('login_view');
+		}
 	}
 
 	public function change_password_view(){
@@ -56,7 +61,7 @@ class User extends MX_Controller {
 		        	);
 		        	$this->user_model->log_user($log_data);
 		        	$home_page = str_ireplace('.x', '', $userdata['HomePage']);
-		        	redirect('lpo'); //replace with $home_page
+		        	redirect($home_page);
 				}else{
 					$message = '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Failed! Incorrect Password</div>';
 				}
