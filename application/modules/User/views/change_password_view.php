@@ -13,19 +13,19 @@
                 <div class="form-group">
                     <label for="old_password" class="col-sm-2 control-label">Old Password</label>
                     <div class="col-sm-6">
-                        <input type="password" class="form-control" id="old_password" name="old_password" placeholder="*****">
+                        <input type="password" class="form-control" id="old_password" name="old_password" placeholder="*****" required="">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="new_password" class="col-sm-2 control-label">New Password</label>
                     <div class="col-sm-6">
-                        <input type="password" class="form-control" id="new_password" name="new_password" placeholder="*****">
+                        <input type="password" class="form-control" id="new_password" name="new_password" placeholder="*****" required="">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="confirm_new_password" class="col-sm-2 control-label">Confirm New Password</label>
                     <div class="col-sm-6">
-                        <input type="password" class="form-control" id="confirm_new_password" name="confirm_new_password" placeholder="*****">
+                        <input type="password" class="form-control" id="confirm_new_password" name="confirm_new_password" placeholder="*****" required="">
                     </div>
                 </div>
  

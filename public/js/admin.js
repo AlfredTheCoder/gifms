@@ -7,11 +7,18 @@ $(function() {
 });
 
 function loadDatatable(tableID, targetURL){
-	//Clear existing table
-  	$(tableID).empty('')
-  	//Create new table
-    $(tableID).DataTable({
-    	"destroy": true,
-        "ajax": targetURL
-    });
+	$.getJSON(targetURL, function(response){
+		//Destroy existing DataTable
+		if($.fn.DataTable.isDataTable(tableID)){
+			$(tableID).DataTable().destroy();
+		}
+		//Clear existing table
+  		$(tableID).empty('')
+  		//Create new table
+	    $(tableID).DataTable({
+	    	"destroy": true,
+	        "data": response.data,
+	        "columns": response.columns
+	    });
+	});
 }	

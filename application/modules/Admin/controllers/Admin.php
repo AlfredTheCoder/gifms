@@ -27,8 +27,19 @@ class Admin extends MX_Controller {
 		$this->template->load_view($data);
 	}
 
-	public function get_table_data($sidemenu){
-
+	public function get_table_data($tablename){
+		//Get data
+		$columns = $this->config->item('columns')[$tablename];
+		$table_data = $this->admin_model->get_table_data($tablename, $columns);
+		$data = array('columns' => array(), 'data' => array());
+		foreach ($table_data as $row) {
+			$data['data'][] = array_values($row);
+		}
+		//Get columns 
+		foreach ($columns as $key => $column) {
+			$data['columns'][] = array('title' => $column);
+		}
+		echo json_encode($data);
 	}
 
 }

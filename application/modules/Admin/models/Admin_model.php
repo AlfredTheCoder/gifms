@@ -7,22 +7,9 @@ class Admin_model extends CI_Model {
 	    parent::__construct();
 	}
 
-	public function get_lpo_status(){
-		$sql = "SELECT 
-					ls.ID,
-					ls.LPOStatus,
-					ls.NextStatus,
-					ls.StatusSecurityLevel,
-					ISNULL(l.StatusCount,0) AS StatusCount
-				FROM LPOStatuses ls
-				INNER JOIN LPOStatusView lsv ON lsv.LPOStatus = ls.ID AND lsv.SecurityLevel = ?
-                LEFT JOIN(
-                	SELECT Status,COUNT(*) as StatusCount 
-                	FROM LPO 
-                	WHERE (RequestedBy = ? OR ProjectManager = ?) 
-                	GROUP BY Status
-                ) l ON l.Status = ls.ID";
-		        $query = $this->db->query($sql, array($this->session->userdata('SecurityGroup'), $this->session->userdata('EID'), $this->session->userdata('EID')));
+	public function get_table_data($tablename, $columns){
+		$this->db->select($columns);
+		$query = $this->db->get($tablename);
         return $query->result_array();
 	}
 
