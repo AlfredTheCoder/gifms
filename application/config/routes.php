@@ -68,3 +68,5 @@ $route['requestadvance'] = 'advance/request_advance_view';
 $route['allowances'] = 'allowance/index';
 $route['requestallowances'] = 'allowance/request_allowance_view';
 $route['requestallowances/payees/(:num)'] = 'allowance/request_allowance_payee_view/$1';
+$route['suppliers'] = 'supplier/index';
+$route['addsupplier'] = 'supplier/add_supplier_view';
