@@ -11,46 +11,46 @@
             <form class="form-horizontal" method="post" action="<?php echo base_url().'supplier/save';?>" enctype="multipart/form-data">	
 
                 <div class="form-group">
-                     <label for="supplier" class="col-sm-2 control-label">Supplier</label>
+                     <label for="id" class="col-sm-2 control-label">Supplier</label>
                     <div class="col-sm-6">
-                       <select class="form-control" id="supplier" name="supplier">
+                       <select class="form-control" id="id" name="id">
                             <option value="0">Please select</option>             
                        </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="lpostatus" class="col-sm-2 control-label">LPO</label>
+                    <label for="lpo" class="col-sm-2 control-label">LPO</label>
                     <div class="col-sm-6">
-                        <select class="form-control" id="lpostatus" name="lpostatus">
+                        <select class="form-control" id="lpo" name="lpo">
                             <option value="0">Please select</option>             
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="contact" class="col-sm-2 control-label">Title/Description</label>
+                    <label for="invoicetitle" class="col-sm-2 control-label">Title/Description *</label>
                      <div class="col-sm-6">
-                         <textarea class="form-control" rows="3" id="addresss" required="required"></textarea>
+                         <textarea class="form-control" rows="3" id="invoicetitle" required="required"></textarea>
                     </div>
                 </div>
 
 				<div class="form-group">
 				     <label for="invoicedate" class="col-sm-2 control-label">Invoice Date</label>
 				      <div class="col-sm-6">
-                        <input type="text" class="form-control" id="invoicedate" name="invoicedate" required="required">
+                        <input type="text" class="form-control" id="invoicedate" name="invoicedate">
                     </div>
                 </div>
 
 				<div class="form-group">
 				     <label for="invoicenumber" class="col-sm-2 control-label">Invoice No</label>
 				     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="invoicenumber" name="invoicenumber" required="required">
+                        <input type="text" class="form-control" id="invoicenumber" name="invoicenumber">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="invoiceamount" class="col-sm-2 control-label">Amount</label>
+                    <label for="invoiceamount" class="col-sm-2 control-label">Amount *</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" id="invoiceamount" name="invoiceamount" required="required">
                         (without commas e.g 100000)
@@ -61,48 +61,52 @@
                     <label for="currency" class="col-sm-2 control-label">Currency</label>
                     <div class="col-sm-10">
                         <label class="radio-inline">
-                            <input type="radio" name="currency" id="currency_kes" value="1" checked="checked"> KES
+                            <input type="radio" name="invoicecurrency" id="invoicecurrency" value="1" checked="checked"> KES
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="currency" id="currency_usd" value="2"> USD
+                            <input type="radio" name="invoicecurrency" id="invoicecurrency" value="2"> USD
                         </label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="email" class="col-sm-2 control-label">Office Shared Cost</label>
+                    <label for="sharedcost" class="col-sm-2 control-label">Office Shared Cost</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="website" name="website" required="required">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                     <label for="paymentmode" class="col-sm-2 control-label">Office Cost Account</label>
-                    <div class="col-sm-6">
-                       <select class="form-control" id="paymentmode" name="paymentmode">
-                            <option value="0">Please select</option>             
+                       <select class="form-control" id="sharedcost" name="sharedcost">
+                            <option value="0">Not Shared Cost</option>             
                        </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="bankaccount" class="col-sm-2 control-label">Recurring Invoice</label>
+                     <label for="account" class="col-sm-2 control-label">Office Cost Account</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="bankaccount" name="bankaccount" required="required">
+                       <select class="form-control" id="account" name="account">
+                            <option value="0">Not Shared Cost</option>             
+                       </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="email" class="col-sm-2 control-label">Recurr End Date</label>
+                    <label for="recurringperiod" class="col-sm-2 control-label">Recurring Invoice</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="usdaccount" name="usdaccount" required="required">
+                       <select class="form-control" id="recurringperiod" name="recurringperiod">
+                            <option value="0">Non Recurring</option>             
+                       </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="recurrenddate" class="col-sm-2 control-label">Recurr End Date</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="recurrenddate" name="recurrenddate">
                     </div>
                 </div>
 		
                 <div class="form-group">
                      <label for="invoicepurpose" class="col-sm-2 control-label">Purpose</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="invoicepurpose" name="invoicepurpose" required="required">
+                        <input type="text" class="form-control" id="invoicepurpose" name="invoicepurpose">
                     </div>
                 </div>
 
@@ -116,38 +120,32 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="country" class="col-sm-2 control-label">Country</label>
+                    <label for="invoicecountry" class="col-sm-2 control-label">Country</label>
                 <div class="col-sm-6">
-                       <select class="form-control" id="country" name="country">
+                       <select class="form-control" id="invoicecountry" name="invoicecountry">
                             <option value="0">Please select</option>             
                        </select>
                     </div>
                 </div>
 
                <div class="form-group">
-                    <label for="currency" class="col-sm-2 control-label">Currency</label>
-                    <div class="col-sm-10">
-                        <label class="radio-inline">
-                            <input type="radio" name="currency" id="currency_kes" value="1" checked="checked"> VAT included in Total (with holding 6%)
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="currency" id="currency_usd" value="2"> Witholding Tax (with holding 5%)
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="currency" id="currency_kes" value="1" checked="checked"> Exercise Duty (10%)
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="currency" id="currency_kes" value="1" checked="checked">Catering Levy (2%)
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="swiftcode" class="col-sm-2 control-label">Taxes</label>
+                    <label for="" class="col-sm-2 control-label">Taxes</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="swiftcode" name="swiftcode" required="required"> Zero Rated Supplies Amount
-                        <input type="text" class="form-control" id="swiftcode" name="swiftcode" required="required"> Exempt Rated Supplies Amount
-                        <input type="text" class="form-control" id="swiftcode" name="swiftcode" required="required"> Other Levies/Taxes
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="vat" id="vat" value="1"> VAT included in Total (with holding 6%)
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="withholdtingtax" id="withholdtingtax" value="1"> Witholding Tax (with holding 5%)
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="exciseduty" id="exciseduty" value="1"> Exercise Duty (10%)
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="cateringlevy" id="cateringlevy" value="1">Catering Levy (2%)
+                        </label><br><br>
+                            <input type="text" class="form-control" id="zerorated" name="zerorated"> Zero Rated Supplies Amount<br><br>
+                            <input type="text" class="form-control" id="exemptsupplies" name="exemptsupplies"> Exempt Rated Supplies Amount<br><br>
+                            <input type="text" class="form-control" id="otherlevies" name="otherlevies"> Other Levies/Taxes
                     </div>
                 </div>
 
@@ -159,6 +157,6 @@
 </div> <!-- /.col -->
     </div> <!-- /.row -->
 </div> <!-- /#page-wrapper -->
-<script src="<?php echo base_url().'public/js/uploadinvoice.js';?>"></script>
+<script src="<?php echo base_url().'public/js/receiveinvoice.js';?>"></script>
 
 s

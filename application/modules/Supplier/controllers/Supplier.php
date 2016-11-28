@@ -1,14 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Supplier extends MX_Controller {
-
 	public function __construct(){
 	    parent::__construct();
 	    $this->load->model('supplier_model');
 	    $this->load->module('template');
 	}
-
 	public function index(){
 		$data['page_header'] = 'Suppliers';
 		$data['content_view'] = 'supplier/suppliers_view';
@@ -16,15 +13,13 @@ class Supplier extends MX_Controller {
 		$data['page_title'] = 'GIFMS | Supplier';
 		$this->template->load_view($data);
 	}
-
 	public function add_supplier_view(){
 		$data['page_header'] = 'Add/Edit Supplier';
 		$data['content_view'] = 'supplier/supplier_add';
-		$data['active_menu'] = 'suppliers';
-		$data['page_title'] = 'GIFMS | Supplier';
+		$data['active_menu'] = 'add new supplier';
+		$data['page_title'] = 'GIFMS | Add New Supplier';
 		$this->template->load_view($data);
 	}
-
 	public function get_cities(){
 		$cities = $this->supplier_model->get_cities();
 	   	foreach ($cities as $citi){
@@ -35,7 +30,6 @@ class Supplier extends MX_Controller {
 	   	} 
 		echo json_encode($data);
 	}
-
 	public function get_payment_modes(){
 		$modes = $this->supplier_model->get_payment_modes();
 	   	foreach($modes as $mode) {
@@ -46,7 +40,6 @@ class Supplier extends MX_Controller {
 	   	} 
 		echo json_encode($data);
 	}
-
 	public function get_banks(){
 		$banks = $this->supplier_model->get_banks();
 	   	foreach($banks as $bank) {
@@ -57,7 +50,6 @@ class Supplier extends MX_Controller {
 	   	} 
 		echo json_encode($data);
 	}
-
 	public function get_bank_branch($bank_id){ 
 		$bankbranch = $this->supplier_model->get_bank_branch($bank_id);
 		foreach($bankbranch as $branch){
@@ -68,7 +60,6 @@ class Supplier extends MX_Controller {
 		} 
 		echo json_encode($data);
 	}
-
 	public function get_supply_categories(){
 		$categories = $this->supplier_model->get_supply_categories();
 	   	foreach($categories as $category) {
@@ -79,7 +70,6 @@ class Supplier extends MX_Controller {
 	   	} 
 		echo json_encode($data);
 	}
-
 	public function get_staff(){
 		$staffs = $this->supplier_model->get_staff();
 	   	foreach($staffs as $staff) {
@@ -90,7 +80,6 @@ class Supplier extends MX_Controller {
 	   	} 
 		echo json_encode($data);
 	}
-
 	public function get_suppliers($filter = "All", $status = 'All'){
 		//Get data
 		$table_data = $this->supplier_model->get_suppliers($filter, $status);
@@ -103,7 +92,6 @@ class Supplier extends MX_Controller {
 		}
 		echo json_encode($data);
 	}
-
 	public function save(){
 		if( $this->input->post('submit') ) 
 		{
