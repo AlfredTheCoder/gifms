@@ -8,7 +8,7 @@ $(function() {
 
     $('#bank').on('change', function(){
         var branch_id = $(this).val()
-        getRemoteJsonData('get_bank_branch/'+branch_id, '#bankbranch')
+        getRemoteJsonData('supplier/get_bank_branch/'+branch_id, '#bankbranch')
     });
 });
 
