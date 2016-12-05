@@ -71,4 +71,5 @@ $route['requestallowances/payees/(:num)'] = 'allowance/request_allowance_payee_v
 $route['suppliers'] = 'supplier/index';
 $route['addsupplier'] = 'supplier/add_supplier_view';
 $route['receive_invoice'] = 'receiveinvoice/index'; 
+$route['approvals'] = 'approval/index';
 

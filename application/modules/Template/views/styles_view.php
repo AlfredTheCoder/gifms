@@ -14,8 +14,10 @@
 <link href="<?php echo base_url().'public/lib/select2/css/select2.min.css';?>" rel="stylesheet">
 <!--Tagsinput-->
 <link href="<?php echo base_url().'public/lib/tagsinput/css/bootstrap-tagsinput.css';?>" rel="stylesheet">
-<!-- Custom CSS -->
+<!-- Sb-Admin CSS -->
 <link href="<?php echo base_url().'public/sb-admin-2/dist/css/sb-admin-2.css';?>" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="<?php echo base_url().'public/css/custom.css';?>" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
